@@ -1,0 +1,31 @@
+<form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email"name="mail" [(ngModel)]="certificat.email" class="form-control" id="inputEmail4">
+  </div>
+  <div class="col-md-5">
+    <label for="inputPassword4" class="form-label">Nom et Prenom</label>
+    <input type="text" name="nom" [(ngModel)]="certificat.username" class="form-control" id="inputPassword4">
+  </div>
+  <div class="col-md-8">
+    <label for="inputAddress" class="form-label">Nom Certificat</label>
+    <input type="text" name="cer" [(ngModel)]="certificat.nomCerteficate"class="form-control" id="inputAddress" placeholder="Certified in">
+  </div>
+  <div class="col-md-8">
+    <label for="inputAddress2" class="form-label">Nom Formatteur</label>
+    <input type="text" name="namess" [(ngModel)]="certificat.trainername" class="form-control" id="inputAddress2" placeholder="">
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Date</label>
+    <input type="date"name="date" [(ngModel)]="certificat.date" class="form-control" id="inputCity">
+  </div>
+
+
+
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-success" (click)="OnGenerate()">Generate Verification</button>
+  </div>  <div class="col-12">
+    <button type="submit" class="btn btn-primary" *ngIf="generated==true" (click)="OnaddCertificat()">Save & Send</button>
+  </div>
+</form>

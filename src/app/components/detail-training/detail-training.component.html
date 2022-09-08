@@ -1,0 +1,40 @@
+
+
+<div class="card mb-3" style="max-width: 780px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img *ngIf="training.theme=='farm'" src="https://media.istockphoto.com/vectors/child-farmer-vector-id928726496?b=1&k=20&m=928726496&s=170667a&w=0&h=rBMxkWo8lB4WUEMXMrc3t1f3LEkkH3yxh4nhLnZJlF4=" class="img-fluid rounded-start" alt="...">
+      <img *ngIf="training.theme=='cuisine' "src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTUtUc9zLkGyPxBqtQtYIvrhZM8b1tGzn7uw&usqp=CAU" class="img-fluid rounded-start" alt="...">
+      <img *ngIf="training.theme=='info' "src="https://www.imaworldwide.com/hs-fs/hubfs/Stock%20images/Close%20up%20of%20finger%20touching%20blue%20toned%20screen%20on%20tablet%20pc.jpeg?width=514&name=Close%20up%20of%20finger%20touching%20blue%20toned%20screen%20on%20tablet%20pc.jpeg" class="img-fluid rounded-start" alt="...">
+      <img *ngIf="training.theme=='medecine' "src="https://www.thewhiteapple.com/wp-content/uploads/2018/01/English-for-doctors-and-nurses.jpg" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Titre : {{training.trainningName}}</h5>
+        <p class="card-text">Category : {{training.theme}}</p>
+        <p class="card-text">Description :
+          {{training.description}}</p>
+        <p class="card-text">
+          Durée:
+          {{training.duration}}</p>
+
+        <div class="card mt-3" *ngIf="fileInfos">
+          <div class="card-header">Course File</div>
+          <ul
+            class="list-group list-group-flush"
+            *ngFor="let file of fileInfos | async"
+          >
+            <li class="list-group-item">
+              <a href="{{ file.url }}">{{ file.name }}</a>
+            </li>
+          </ul>
+        </div>
+        <p class="card-text"><small class="text-muted">By : {{training.trainerName}}</small></p>
+        <button class="btn btn-danger  text-right " (click)="Ondelete()">Delete<i class="bi bi-trash-fill"></i></button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+

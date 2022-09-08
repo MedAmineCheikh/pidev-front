@@ -1,0 +1,17 @@
+<div class="card-group">
+<div class="row">
+
+  <div class="col-md-1 mx-auto my-1 shadow-sm" *ngFor="let t of training" style="width: 18rem;">
+    <img *ngIf="t.theme=='farm'" src="https://media.istockphoto.com/vectors/child-farmer-vector-id928726496?b=1&k=20&m=928726496&s=170667a&w=0&h=rBMxkWo8lB4WUEMXMrc3t1f3LEkkH3yxh4nhLnZJlF4=" class="img-fluid rounded-start" alt="...">
+    <img *ngIf="t.theme=='cuisine' "src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTUtUc9zLkGyPxBqtQtYIvrhZM8b1tGzn7uw&usqp=CAU" class="img-fluid rounded-start" alt="...">
+    <img *ngIf="t.theme=='info' "src="https://www.imaworldwide.com/hs-fs/hubfs/Stock%20images/Close%20up%20of%20finger%20touching%20blue%20toned%20screen%20on%20tablet%20pc.jpeg?width=514&name=Close%20up%20of%20finger%20touching%20blue%20toned%20screen%20on%20tablet%20pc.jpeg" class="img-fluid rounded-start" alt="...">
+    <img *ngIf="t.theme=='medecine' "src="https://www.thewhiteapple.com/wp-content/uploads/2018/01/English-for-doctors-and-nurses.jpg" class="img-fluid rounded-start" alt="...">
+
+    <div class="card-body">
+      <h5 class="card-title">title {{t.trainningName}}</h5>
+      <p class="card-text">Description : {{t.description}}</p>
+      <a class="btn btn-primary" (click)="onGettrainingbyId(t.idTrainning)">More details</a>
+    </div>
+  </div>
+  </div>
+</div>

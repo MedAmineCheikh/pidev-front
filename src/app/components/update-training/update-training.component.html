@@ -1,0 +1,50 @@
+<ul class="box-info">
+  <li>
+    <span>
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Nom Formation</label>
+      <input type="text" [(ngModel)]="training.trainningName" class="form-control" name="formation" id="inputEmail4" placeholder="Formation">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Nom Formatteur</label>
+      <input type="text" [(ngModel)]="training.trainerName" class="form-control" name="nom" id="inputPassword4" placeholder="nom pernom">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Description</label>
+    <input type="text" [(ngModel)]="training.description" class="form-control" name="desc" id="inputAddress" placeholder=".......">
+  </div>
+  <div class="form-row">
+
+    <div class="form-group col-md-4">
+      <label for="inpState">Theme</label>
+      <select id="inpState" [(ngModel)]="training.theme" name="theme" class="form-control">
+        <option selected>Choose...</option>
+        <option value="medecine">medecine</option>
+        <option value="farm">farm</option>
+        <option value="cuisine">cuisine</option>
+        <option value="info">informatique</option>
+      </select>
+    </div><div class="form-group col-md-4">
+      <label for="inputState">Duration</label>
+      <select id="inputState" name="dur" [(ngModel)]="training.duration"class="form-control">
+        <option selected>Choose...</option>
+        <option value="3 weeks">3 Weeks</option>
+        <option value="6 weeks">6 Weeks</option>
+        <option value="8 weeks">8 Weeks</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputZip">Date</label>
+      <input type="date" name="date" [(ngModel)]="training.trainingDate" class="form-control" id="inputZip">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-warning m-3"  (click)="OnUpdate()">Update</button>
+  </form>
+
+     </span>
+  </li>
+</ul>

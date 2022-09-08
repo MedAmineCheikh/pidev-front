@@ -1,0 +1,72 @@
+<div class="head-title">
+  <div class="left">
+    <h1>Formation List</h1>
+    <ul class="breadcrumb">
+      <li>
+        <a href="#">Formation List</a>
+      </li>
+      <li><i class='bx bx-chevron-right' ></i></li>
+      <li>
+        <a class="active" href="#">Home</a>
+      </li>
+    </ul>
+  </div>
+
+  <a  class="btn-download" routerLink="/upload">
+    <i class='bx bxs-cloud-download' ></i>
+    <span class="text">Ajoute Formation</span>
+  </a>
+</div>
+
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Recent Formation</h3>
+      <i class='bx bx-search' ></i>
+      <i class='bx bx-filter' ></i>
+    </div>
+    <table>
+      <thead>
+      <tr>
+        <th>Nom de Formation</th>
+        <th>Description</th>
+        <th>Duree</th>
+        <th>Theme</th>
+        <th>Formatteur</th>
+        <th>Details</th>
+        <th>Update</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let t of training ">
+        <td>
+          {{t.trainningName}}
+        </td>
+        <td>
+          {{t.description}}
+        </td>
+        <td>
+          {{t.duration}}
+        </td>
+        <td>
+          {{t.theme}}
+        </td>
+        <td>
+          {{t.trainerName}}
+        </td>
+        <td>
+          <button class="btn btn-primary " (click)="onGettrainingbyId(t.idTrainning)">
+            <i class="bi bi-clipboard-plus-fill"></i></button>
+        <td><button  (click)="onGetupdatebyId(t.idTrainning)" class="btn btn-warning"  ><i class="bi bi-arrow-up-left-square"></i></button></td>
+
+
+        </tr>
+     </tbody>
+
+    </table>
+
+   </div>
+</div>
+
+
+

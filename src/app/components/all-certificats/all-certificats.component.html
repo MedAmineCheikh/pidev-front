@@ -1,0 +1,73 @@
+<div class="head-title">
+  <div class="left">
+    <h1>Certificat List</h1>
+    <ul class="breadcrumb">
+      <li>
+        <a href="#">Certificat List</a>
+      </li>
+      <li><i class='bx bx-chevron-right' ></i></li>
+      <li>
+        <a class="active" href="#">Home</a>
+      </li>
+    </ul>
+  </div>
+
+  <a  class="btn-download" routerLink="/add-certificat">
+    <i class='bx bxs-cloud-download' ></i>
+    <span class="text">Ajoute Certificat</span>
+  </a>
+</div>
+
+<div class="table-data">
+  <div class="order">
+    <div class="head">
+      <h3>Recent Orders</h3>
+      <i class='bx bx-search' ></i>
+      <i class='bx bx-filter' ></i>
+    </div>
+    <table>
+      <thead>
+      <tr>
+        <th>Nom de Certificat</th>
+        <th>Formatteur</th>
+        <th>Nom et prenom</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let t of certificat ">
+        <td>
+          {{t.nomCerteficate}}
+        </td>
+        <td>
+          {{t.trainername}}
+        </td>
+        <td>
+          {{t.username}}
+        </td>
+        <td>
+          {{t.email}}
+        </td>
+        <td>
+          {{t.date | date:'dd-MM-yyyy'}}
+        </td>
+        <td>
+          <button class="btn btn-warning" (click)="GoUpdate(t.idCerteficat)" ><i class="bi bi-arrow-up-left-square"></i></button>
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="Ondelete(t.idCerteficat)"><i class="bi bi-trash-fill"></i></button>
+        </td>
+
+      </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+</div>
+
+
+
